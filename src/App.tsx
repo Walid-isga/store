@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import ScrollToTop from "./components/ScrollToTop";
 
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
@@ -65,6 +66,7 @@ const LayoutWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 function App() {
   return (
     <Router>
+      <ScrollToTop />  {/* <= AJOUTER CETTE LIGNE ICI */}
       <Routes>
         {/* Root redirect */}
         <Route path="/" element={<LanguageRedirect />} />
@@ -137,6 +139,7 @@ const AppWithCurrency: React.FC = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LanguageRedirect />} />
         

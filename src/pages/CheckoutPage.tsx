@@ -9,6 +9,7 @@ import { formatPrice, convertPrice } from '../utils/currency';
 import { generateOrderId } from '../utils/id';
 import { saveOrder } from '../utils/orders';
 import { generateWhatsAppMessage, openWhatsApp, copyToClipboard } from '../utils/whatsapp';
+import { submitOrderToGoogleForm } from '../utils/sheets';
 
 interface CheckoutFormData {
   name: string;
@@ -92,6 +93,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({ selectedCurrency }) 
     // Save order to localStorage
     saveOrder(orderData);
 
+    void submitOrderToGoogleForm(orderData);
     // Generate WhatsApp message
     const message = generateWhatsAppMessage(orderData, t, i18n.language);
 

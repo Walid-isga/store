@@ -1,42 +1,96 @@
 // src/config.ts
+// ---------------------- ENV ----------------------
 const env = import.meta.env;
+
 function requireEnv(name: string) {
   const v = env[name as keyof typeof env] as string | undefined;
   if (!v) throw new Error(`Missing env: ${name}`);
   return v;
 }
+function optionalEnv(name: string, fallback = "") {
+  return (env[name as keyof typeof env] as string | undefined) ?? fallback;
+}
 
-export const WHATSAPP_PHONE = requireEnv('VITE_WHATSAPP_PHONE');
-export const PAYMENT_LINK_BASE = requireEnv('VITE_PAYMENT_LINK_BASE');
-export const ADMIN_PASSWORD_HASH = requireEnv('VITE_ADMIN_PASSWORD_HASH');
+// Exposés au client (Vite): doivent commencer par VITE_
+export const WHATSAPP_PHONE = requireEnv("VITE_WHATSAPP_PHONE");
+export const PAYMENT_LINK_BASE = requireEnv("VITE_PAYMENT_LINK_BASE");
+export const ADMIN_PASSWORD_HASH = requireEnv("VITE_ADMIN_PASSWORD_HASH");
 
+// ---------------------- CURRENCIES ----------------------
 export const DEFAULT_CURRENCY = "EUR";
-export const SUPPORTED_CURRENCIES = ["EUR","GBP","CHF","SEK","DKK","NOK","PLN","CZK"] as const;
+export const SUPPORTED_CURRENCIES = [
+  "EUR",
+  "GBP",
+  "CHF",
+  "SEK",
+  "DKK",
+  "NOK",
+  "PLN",
+  "CZK",
+] as const;
+export type CurrencyCode = (typeof SUPPORTED_CURRENCIES)[number];
+export const DEFAULT_LOCALE = "en";
 
 export const COUNTRY_TO_CURRENCY: Record<string, string> = {
-  FR: "EUR", DE: "EUR", IT: "EUR", ES: "EUR", PT: "EUR", NL: "EUR", BE: "EUR", 
-  LU: "EUR", IE: "EUR", AT: "EUR", FI: "EUR", GR: "EUR", SK: "EUR", SI: "EUR", 
-  CY: "EUR", MT: "EUR", EE: "EUR", LV: "EUR", LT: "EUR", GB: "GBP", CH: "CHF", 
-  SE: "SEK", DK: "DKK", NO: "NOK", PL: "PLN", CZ: "CZK"
+  FR: "EUR",
+  DE: "EUR",
+  IT: "EUR",
+  ES: "EUR",
+  PT: "EUR",
+  NL: "EUR",
+  BE: "EUR",
+  LU: "EUR",
+  IE: "EUR",
+  AT: "EUR",
+  FI: "EUR",
+  GR: "EUR",
+  SK: "EUR",
+  SI: "EUR",
+  CY: "EUR",
+  MT: "EUR",
+  EE: "EUR",
+  LV: "EUR",
+  LT: "EUR",
+  GB: "GBP",
+  CH: "CHF",
+  SE: "SEK",
+  DK: "DKK",
+  NO: "NOK",
+  PL: "PLN",
+  CZ: "CZK",
 };
 
-export const GOOGLE_FORM_ACTION_URL = ""; // Optional: Google Forms URL
+// ---------------------- GOOGLE FORMS / SHEETS ----------------------
+// URL d'action de TON Google Form (POST)
+export const GOOGLE_FORM_ACTION_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeq9bA_6LkJyQMHOCOkNg9a6WvjLoh4gjHMkquyjFhexhg-dg/formResponse";
+
+// Mapping des champs (tes entry.xxxxx)
 export const GOOGLE_FORM_FIELDS = {
-  name: "entry.111",
-  email: "entry.222", 
-  phone: "entry.333",
-  country: "entry.444",
-  plan: "entry.555",
-  note: "entry.666",
-  orderId: "entry.777",
-  currency: "entry.888",
-  price: "entry.999"
+  orderId: "entry.1678666027",
+  name: "entry.177162094",
+  email: "entry.1838168850",
+  phone: "entry.345722898",
+  country: "entry.1335973341",
+  plan: "entry.242041475",
+  currency: "entry.1085468524",
+  price: "entry.155608386",
+  duration: "entry.141265833",
+  note: "entry.1159579805",
 };
 
-export const GOOGLE_SHEET_ID = ""; // Optional: Google Sheets ID
-export const GOOGLE_SHEET_GID = "0";
-export const ADMIN_UPDATE_ENDPOINT = ""; // Optional: Apps Script endpoint
+// Lien CSV publié (recommandé pour l’admin)
+export const GOOGLE_SHEET_PUBLISHED_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vR8bgQRnhftlwp15Q223D4TnktllMePFMq1b1KO7kQwJvuUI2gi-kZH3eSrn4vcNue2-NSjHxFMN2EI/pub?gid=990750460&single=true&output=csv";
 
+// Optionnel: mode /gviz si tu préfères reconstruire l’URL (sinon laisse vide)
+export const GOOGLE_SHEET_ID = optionalEnv("VITE_GOOGLE_SHEET_ID", "");
+export const GOOGLE_SHEET_GID = optionalEnv("VITE_GOOGLE_SHEET_GID", "0");
+
+// Optionnel: endpoint Apps Script si tu passes à une API JSON plus tard
+export const ADMIN_UPDATE_ENDPOINT = optionalEnv("VITE_ADMIN_UPDATE_ENDPOINT", "");
+
+// ---------------------- PLANS & COUNTRIES ----------------------
 export type Plan = {
   id: string;
   title: string;
@@ -47,27 +101,27 @@ export type Plan = {
 };
 
 export const PLANS: Plan[] = [
-  { 
-    id: "p1", 
-    title: "1 Month", 
-    price: 9.99, 
-    durationDays: 30, 
-    features: ["Full HD Quality", "24/7 Support", "All European Channels"] 
+  {
+    id: "p1",
+    title: "1 Month",
+    price: 9.99,
+    durationDays: 30,
+    features: ["Full HD Quality", "24/7 Support", "All European Channels"],
   },
-  { 
-    id: "p3", 
-    title: "3 Months", 
-    price: 24.99, 
-    durationDays: 90, 
-    features: ["Save 15%", "Premium Sports", "Movie Channels", "Mobile App"], 
+  {
+    id: "p3",
+    title: "3 Months",
+    price: 24.99,
+    durationDays: 90,
+    features: ["Save 15%", "Premium Sports", "Movie Channels", "Mobile App"],
   },
-  { 
-    id: "p12", 
-    title: "12 Months", 
-    price: 49.99, 
-    durationDays: 365, 
+  {
+    id: "p12",
+    title: "12 Months",
+    price: 49.99,
+    durationDays: 365,
     features: ["Best Value", "4K Quality", "Priority Support", "VIP Access"],
-    popular: true 
+    popular: true,
   },
 ];
 
