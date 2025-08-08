@@ -15,7 +15,6 @@ function optionalEnv(name: string, fallback = "") {
 export const WHATSAPP_PHONE = requireEnv("VITE_WHATSAPP_PHONE");
 export const PAYMENT_LINK_BASE = requireEnv("VITE_PAYMENT_LINK_BASE");
 export const ADMIN_PASSWORD_HASH = requireEnv("VITE_ADMIN_PASSWORD_HASH");
-
 // ---------------------- CURRENCIES ----------------------
 export const DEFAULT_CURRENCY = "EUR";
 export const SUPPORTED_CURRENCIES = [

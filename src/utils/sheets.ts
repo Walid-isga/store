@@ -5,6 +5,7 @@ import {
   GOOGLE_FORM_FIELDS,
   GOOGLE_SHEET_ID,
   GOOGLE_SHEET_GID,
+  GOOGLE_SHEET_PUBLISHED_CSV_URL,
 } from '../config';
 
 /**
@@ -152,9 +153,15 @@ export const parseCSVToOrders = (csvText: string): Order[] => {
 };
 
 export const fetchOrdersFromGoogleSheets = async (): Promise<Order[]> => {
-  if (!GOOGLE_SHEET_ID) return [];
   try {
-    const url = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GOOGLE_SHEET_GID || '0'}`;
+    const url =
+      GOOGLE_SHEET_PUBLISHED_CSV_URL ||
+      (GOOGLE_SHEET_ID
+        ? `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GOOGLE_SHEET_GID || '0'}`
+        : "");
+
+    if (!url) return []; // rien de configuré
+
     const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const csv = await res.text();
