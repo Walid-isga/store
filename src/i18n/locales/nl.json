@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "plans": "Abonnementen",
+    "admin": "Admin",
+    "legal": "Juridisch"
+  },
+  "home": {
+    "title": "Premium IPTV voor Europa",
+    "subtitle": "Bekijk duizenden kanalen in HD/4K kwaliteit met 24/7 ondersteuning",
+    "features": {
+      "quality": "Full HD & 4K",
+      "support": "24/7 Ondersteuning",
+      "channels": "1000+ Kanalen",
+      "devices": "Multi-Apparaat"
+    },
+    "cta": "Bekijk Abonnementen"
+  },
+  "plans": {
+    "title": "Kies Uw Abonnement",
+    "subtitle": "Alle abonnementen bevatten volledige toegang tot onze premium IPTV service",
+    "month": "maand",
+    "months": "maanden",
+    "year": "jaar",
+    "days": "dagen",
+    "popular": "Meest Populair",
+    "choose": "Kies Abonnement",
+    "features": "Inbegrepen functies"
+  },
+  "checkout": {
+    "title": "Voltooi Uw Bestelling",
+    "subtitle": "Vul uw gegevens in om door te gaan met WhatsApp betaling",
+    "form": {
+      "name": "Volledige Naam",
+      "email": "Email Adres",
+      "phone": "Telefoonnummer",
+      "country": "Land",
+      "note": "Aanvullende Opmerkingen (Optioneel)",
+      "required": "Dit veld is verplicht",
+      "invalidEmail": "Voer een geldig email adres in",
+      "invalidPhone": "Voer een geldig telefoonnummer in"
+    },
+    "summary": {
+      "title": "Bestelling Overzicht",
+      "plan": "Geselecteerd Abonnement",
+      "duration": "Duur",
+      "price": "Totale Prijs"
+    },
+    "payment": {
+      "whatsapp": "Doorgaan op WhatsApp",
+      "copy": "Kopieer Betalingslink",
+      "info": "U wordt doorgestuurd naar WhatsApp met alle bestelgegevens. Voltooi uw betaling met de verstrekte link."
+    }
+  },
+  "success": {
+    "title": "Bestelling Succesvol Geplaatst!",
+    "subtitle": "Uw bestelling is ingediend. U wordt binnenkort gecontacteerd via WhatsApp.",
+    "orderId": "Bestelling ID",
+    "whatsapp": "WhatsApp Opnieuw Openen",
+    "home": "Terug naar Home"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "unauthorized": "Ongeautoriseerde Toegang",
+    "stats": {
+      "totalOrders": "Totale Bestellingen",
+      "totalRevenue": "Totale Omzet",
+      "weeklyOrders": "Deze Week",
+      "avgOrder": "Gemiddelde Bestelling"
+    },
+    "orders": {
+      "title": "Bestelling Beheer",
+      "search": "Zoek bestellingen...",
+      "filter": "Filter op",
+      "export": "Exporteer CSV",
+      "columns": {
+        "date": "Datum",
+        "orderId": "Bestelling ID",
+        "client": "Klant",
+        "email": "Email",
+        "phone": "Telefoon",
+        "country": "Land",
+        "plan": "Abonnement",
+        "price": "Prijs",
+        "status": "Status"
+      },
+      "status": {
+        "pending": "In Behandeling",
+        "completed": "Voltooid",
+        "cancelled": "Geannuleerd"
+      }
+    }
+  },
+  "footer": {
+    "description": "Premium IPTV service voor Europese klanten met hoogwaardige streaming en betrouwbare ondersteuning.",
+    "links": {
+      "legal": "Juridisch",
+      "terms": "Voorwaarden",
+      "privacy": "Privacy",
+      "refund": "Terugbetaling",
+      "cookies": "Cookies"
+    },
+    "copyright": "© 2025 IPTV Europe. Alle rechten voorbehouden."
+  },
+  "legal": {
+    "title": "Juridische Informatie",
+    "disclaimer": "IPTV Service Disclaimer",
+    "content": "Deze service biedt toegang tot digitale televisie-inhoud. Gebruikers zijn verantwoordelijk voor het naleven van lokale wetten en regelgeving betreffende toegang tot en gebruik van inhoud."
+  },
+  "whatsapp": {
+    "orderMessage": "Hallo, ik wil graag een IPTV-abonnement bestellen.\n\n• Bestel-ID: {{orderId}}\n• Naam: {{name}}\n• E-mail: {{email}}\n• Telefoon: {{phone}}\n• Land: {{country}}\n• Abonnement: {{planTitle}} ({{durationText}})\n• Prijs: {{price}}\n• Opmerking: {{note}}\n\nBevestig alstublieft de beschikbaarheid en stuur mij de betalingslink."
+  }
+}

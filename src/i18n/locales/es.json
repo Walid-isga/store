@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "plans": "Planes",
+    "admin": "Admin",
+    "legal": "Legal"
+  },
+  "home": {
+    "title": "IPTV Premium para Europa",
+    "subtitle": "Mira miles de canales en calidad HD/4K con soporte 24/7",
+    "features": {
+      "quality": "Full HD y 4K",
+      "support": "Soporte 24/7",
+      "channels": "1000+ Canales",
+      "devices": "Multi-Dispositivo"
+    },
+    "cta": "Ver Planes"
+  },
+  "plans": {
+    "title": "Elige Tu Plan",
+    "subtitle": "Todos los planes incluyen acceso completo a nuestro servicio IPTV premium",
+    "month": "mes",
+    "months": "meses",
+    "year": "año",
+    "days": "días",
+    "popular": "Más Popular",
+    "choose": "Elegir Plan",
+    "features": "Características incluidas"
+  },
+  "checkout": {
+    "title": "Completa Tu Pedido",
+    "subtitle": "Completa tus datos para proceder con el pago vía WhatsApp",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Dirección de Email",
+      "phone": "Número de Teléfono",
+      "country": "País",
+      "note": "Notas Adicionales (Opcional)",
+      "required": "Este campo es obligatorio",
+      "invalidEmail": "Por favor introduce un email válido",
+      "invalidPhone": "Por favor introduce un número de teléfono válido"
+    },
+    "summary": {
+      "title": "Resumen del Pedido",
+      "plan": "Plan Seleccionado",
+      "duration": "Duración",
+      "price": "Precio Total"
+    },
+    "payment": {
+      "whatsapp": "Continuar en WhatsApp",
+      "copy": "Copiar Enlace de Pago",
+      "info": "Serás redirigido a WhatsApp con todos los detalles del pedido. Completa tu pago usando el enlace proporcionado."
+    }
+  },
+  "success": {
+    "title": "¡Pedido Realizado con Éxito!",
+    "subtitle": "Tu pedido ha sido enviado. Te contactaremos vía WhatsApp en breve.",
+    "orderId": "ID del Pedido",
+    "whatsapp": "Abrir WhatsApp de Nuevo",
+    "home": "Volver al Inicio"
+  },
+  "admin": {
+    "title": "Panel de Administración",
+    "unauthorized": "Acceso No Autorizado",
+    "stats": {
+      "totalOrders": "Pedidos Totales",
+      "totalRevenue": "Ingresos Totales",
+      "weeklyOrders": "Esta Semana",
+      "avgOrder": "Pedido Promedio"
+    },
+    "orders": {
+      "title": "Gestión de Pedidos",
+      "search": "Buscar pedidos...",
+      "filter": "Filtrar por",
+      "export": "Exportar CSV",
+      "columns": {
+        "date": "Fecha",
+        "orderId": "ID Pedido",
+        "client": "Cliente",
+        "email": "Email",
+        "phone": "Teléfono",
+        "country": "País",
+        "plan": "Plan",
+        "price": "Precio",
+        "status": "Estado"
+      },
+      "status": {
+        "pending": "Pendiente",
+        "completed": "Completado",
+        "cancelled": "Cancelado"
+      }
+    }
+  },
+  "footer": {
+    "description": "Servicio IPTV premium para clientes europeos con streaming de alta calidad y soporte confiable.",
+    "links": {
+      "legal": "Legal",
+      "terms": "Términos",
+      "privacy": "Privacidad",
+      "refund": "Reembolso",
+      "cookies": "Cookies"
+    },
+    "copyright": "© 2025 IPTV Europe. Todos los derechos reservados."
+  },
+  "legal": {
+    "title": "Información Legal",
+    "disclaimer": "Descargo de Responsabilidad del Servicio IPTV",
+    "content": "Este servicio proporciona acceso a contenido de televisión digital. Los usuarios son responsables de asegurar el cumplimiento con las leyes y regulaciones locales regarding el acceso y uso del contenido."
+  },
+  "whatsapp": {
+    "orderMessage": "Hola, me gustaría comprar una suscripción IPTV.\n\n• ID de pedido: {{orderId}}\n• Nombre: {{name}}\n• Email: {{email}}\n• Teléfono: {{phone}}\n• País: {{country}}\n• Plan: {{planTitle}} ({{durationText}})\n• Precio: {{price}}\n• Nota: {{note}}\n\nPor favor, confirme la disponibilidad y envíeme el enlace de pago."
+  }
+}
